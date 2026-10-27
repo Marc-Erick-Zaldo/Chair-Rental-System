@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Ned’s Chair Rental Service: check chair availability, see your price, and book online for weddings, parties, and gatherings.">
+    <title>Ned’s Chair Rental Service | Book Chairs Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="#top" class="brand">Ned’s Chair Rental Service</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#how">How it works</a></li>
+                <li><a href="#book">Book</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="tel:" class="nav-phone">09XX XXX XXXX</a>
+        <a href="#book" class="btn">Book now</a>
+    </header>
+
+    <main id="top">
+
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Chairs for weddings, parties, and every gathering</h1>
+                <p>Check availability online and see your price in seconds. Pickup or delivery available.</p>
+                <div class="hero-actions">
+                    <a href="#book" class="btn btn-large">Check availability</a>
+                    <a href="tel:" class="btn btn-large btn-outline">Call us</a>
+                </div>
+            </div>
+            <img src="https://i.pinimg.com/1200x/51/a8/e7/51a8e7433ad51e6a5daf18ebf274004c.jpg" alt="Chairs set up for an event" class="hero-photo" width="1200" height="1200">
+        </section>
+
+        <section class="trust">
+            <div><strong><span id="stock-total">100</span> chairs in stock</strong><span>ready for your date</span>
+            </div>
+            <div><strong>Pickup or delivery</strong><span>you choose when you book</span></div>
+            <div><strong>Confirmed by message</strong><span>we reply to every request</span></div>
+        </section>
+
+        <section id="pricing" class="section">
+            <h2 class="section-title">Simple pricing</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Chair rental</h3>
+                    <p class="price" id="price-rate">₱10</p>
+                    <p class="price-note">per chair, per day</p>
+                    <p>Rent as many as you need. The event day and the return day both count.</p>
+                </div>
+                <div class="card">
+                    <h3>Delivery</h3>
+                    <p class="price" id="price-delivery">₱150</p>
+                    <p class="price-note">per delivery</p>
+                    <p>Choose pickup instead and skip the delivery fee.</p>
+                </div>
+                <div class="card">
+                    <h3>Large events</h3>
+                    <p class="price">Ask us</p>
+                    <p class="price-note">custom quote</p>
+                    <p>Planning for a big crowd? Message us for a package price.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how" class="section">
+            <h2 class="section-title">How booking works</h2>
+            <ol class="steps">
+                <li><span class="step-number">1</span>
+                    <div>
+                        <h3>Pick your dates and chairs</h3>
+                        <p>See what is available and your total right away.</p>
+                    </div>
+                </li>
+                <li><span class="step-number">2</span>
+                    <div>
+                        <h3>Send your request</h3>
+                        <p>Add your name and mobile number.</p>
+                    </div>
+                </li>
+                <li><span class="step-number">3</span>
+                    <div>
+                        <h3>We confirm by message</h3>
+                        <p>We reply to confirm your booking.</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section id="book" class="section">
+            <h2 class="section-title">Book your chairs</h2>
+            <form id="booking-form" class="form-card" novalidate>
+
+                <div class="field">
+                    <label for="name">Full name</label>
+                    <input type="text" id="name" name="name" autocomplete="name">
+                    <small class="error-message" id="name-error"></small>
+                </div>
+
+                <div class="field">
+                    <label for="phone">Mobile number</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="09123456789">
+                    <small class="error-message" id="phone-error"></small>
+                </div>
+
+                <div class="form-row">
+                    <div class="field">
+                        <label for="start-date">Event date</label>
+                        <input type="date" id="start-date" name="start-date">
+                        <small class="error-message" id="start-date-error"></small>
+                    </div>
+                    <div class="field">
+                        <label for="end-date">Return date</label>
+                        <input type="date" id="end-date" name="end-date">
+                        <small class="error-message" id="end-date-error"></small>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="chairs">Number of chairs</label>
+                    <input type="number" id="chairs" name="chairs" min="1" inputmode="numeric">
+                    <small class="error-message" id="chairs-error"></small>
+                </div>
+
+                <fieldset class="mode-group">
+                    <legend>How will you get them?</legend>
+                    <label class="radio"><input type="radio" name="mode" value="pickup" checked> Pickup</label>
+                    <label class="radio"><input type="radio" name="mode" value="delivery"> Delivery</label>
+                </fieldset>
+
+                <div class="field" id="address-field" hidden>
+                    <label for="address">Delivery address</label>
+                    <input type="text" id="address" name="address" autocomplete="street-address">
+                    <small class="error-message" id="address-error"></small>
+                </div>
+
+                <div class="summary-box" id="availability" aria-live="polite"></div>
+                <p class="estimate" id="estimate" aria-live="polite"></p>
+
+                <button type="submit" class="btn btn-large">Request booking</button>
+            </form>
+        </section>
+
+        <section id="manager" class="section">
+            <h2 class="section-title">Booking manager</h2>
+            <p class="section-note">Owner view. New requests start as pending. Confirm or cancel them here. Bookings are
+                saved in this browser only.</p>
+            <div id="booking-list" class="booking-list"></div>
+        </section>
+
+    </main>
+
+    <footer id="contact" class="footer">
+        <div>
+            <strong>Ned’s Chair Rental Service</strong>
+            <p>Chairs for weddings, parties, and gatherings.</p>
+        </div>
+        <div>
+            <strong>Contact</strong>
+            <p>09XX XXX XXXX<br>Chairrental@gmail.com</p>
+        </div>
+        <div>
+            <strong>Hours and area</strong>
+            <p>7:00 AM - 7:00 PM<br>Sta. Elena Camarines Norte, Philippines, Region 5</p>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
